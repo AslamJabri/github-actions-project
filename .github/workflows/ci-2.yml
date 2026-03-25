@@ -1,0 +1,29 @@
+name: workflow-exercise
+on: push
+jobs:
+    LTD-pipeline:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout the Code
+              uses: actions/checkout@v6
+            - name: Making the node env
+              uses: actions/setup@6
+              with:
+                node-version: '18'
+            - name: Installing Dependencies
+              run: |
+                  npm ci
+                  npm install eslint --save-dev
+            - name: Lint
+              run: npm run lint
+            - name: Test
+              run: npm run test
+            - name: Build
+              run: npm run build
+    Output-Info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output
+              run: echo "${{toJson(github.event.repository.has_issues)}}"
+        
+              
