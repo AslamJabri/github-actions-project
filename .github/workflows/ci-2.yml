@@ -8,9 +8,7 @@ jobs:
         runs-on: ubuntu-latest
         steps:
             - name: Checkout the Code
-              uses: actions/checkout@v6
-              with:
-                repository: 'https://github.com/AslamJabri/github-actions-project.git'
+              uses: actions/checkout@v6.0.2
             - name: Making the node env
               uses: actions/setup@6
               with:
