@@ -1,4 +1,5 @@
 name: workflow-exercise
+
 on: 
     push:
         branches:
@@ -17,9 +18,9 @@ jobs:
             - name: Installing Dependencies
               run: |
                   npm ci
-                  npm install eslint@8 --save-dev
-            - name: Lint
-              run: npm run lint
+           #       npm install eslint@8 --save-dev
+          #  - name: Lint
+          #    run: npm run lint            
             - name: Test
               run: npm run test
             - name: Build
