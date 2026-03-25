@@ -1,5 +1,8 @@
 name: workflow-exercise
-on: push
+on: 
+    push:
+        branches:
+            - 'main'
 jobs:
     LTD-pipeline:
         runs-on: ubuntu-latest
