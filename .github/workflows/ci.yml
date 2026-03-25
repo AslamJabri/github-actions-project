@@ -4,7 +4,7 @@ on:
         branches:
             - 'main'
 jobs:
-    pipeline-file:
+    making-env:
         runs-on: ubuntu-latest
         steps:
             - name: Get the code from repo
@@ -17,6 +17,23 @@ jobs:
               run: npm ci
             - name: Run tests
               run: npm test
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get the code from repo
+              uses: actions/checkout@v6.0.2
+            - name: making node env
+              uses: actions/setup-node@v6
+              with:
+                node-version: 18
+            - name: Install Dependency
+              run: npm ci
+            - name: Build Project
+              run: npm run build
+            - name: Deploying
+              run: echo "Deploying..."
+
+
 
               
     
