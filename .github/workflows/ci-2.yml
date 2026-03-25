@@ -9,6 +9,8 @@ jobs:
         steps:
             - name: Checkout the Code
               uses: actions/checkout@v6
+              with:
+                repository: 'https://github.com/AslamJabri/github-actions-project.git'
             - name: Making the node env
               uses: actions/setup@6
               with:
