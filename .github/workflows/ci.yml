@@ -1,0 +1,22 @@
+name: js-script-project
+on: 
+    push:
+        branches:
+            - 'main'
+jobs:
+    pipeline-file:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Get the code from repo
+              uses: actions/checkout@v6.0.2
+            - name: making node env
+              uses: actions/setup-node@v6
+              with:
+                node-version: 18
+            - name: Install Dependency
+              run: npm ci
+            - name: Run tests
+              run: npm test
+
+              
+    
