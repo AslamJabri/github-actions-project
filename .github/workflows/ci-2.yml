@@ -2,7 +2,7 @@ name: workflow-exercise
 on: 
     push:
         branches:
-            - 'main'
+            - 'testing'
 jobs:
     LTD-pipeline:
         runs-on: ubuntu-latest
