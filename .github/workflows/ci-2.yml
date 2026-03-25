@@ -2,7 +2,7 @@ name: workflow-exercise
 on: 
     push:
         branches:
-            - 'testing'
+            - 'main'
 jobs:
     LTD-pipeline:
         runs-on: ubuntu-latest
@@ -10,7 +10,7 @@ jobs:
             - name: Checkout the Code
               uses: actions/checkout@v6.0.2
             - name: Making the node env
-              uses: actions/setup-node@6
+              uses: actions/setup@6
               with:
                 node-version: '18'
             - name: Installing Dependencies
