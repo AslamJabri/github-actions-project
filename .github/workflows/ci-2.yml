@@ -10,7 +10,7 @@ jobs:
             - name: Checkout the Code
               uses: actions/checkout@v6.0.2
             - name: Making the node env
-              uses: actions/setup@6
+              uses: actions/setup-node@6
               with:
                 node-version: '18'
             - name: Installing Dependencies
